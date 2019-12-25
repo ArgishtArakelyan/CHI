@@ -1,0 +1,462 @@
+<html>
+
+<head>
+    <title>CHI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/css/main.css">
+    <link rel="stylesheet" href="../css/css/responsive.css">
+</head>
+
+<body>
+    <!-- Start Header -->
+    <header class="navigation-wrap eff03">
+        <div class="inner-wrap">
+            <div class="logo"><a href=""><img src="../img/logo1.png" alt=""></a></div>
+
+            <div class="m-lines">
+                <div class="vh-centered">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                </div>
+            </div>
+
+            <div class="menu eff03">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT CHI</a></li>
+                    <li><a href="">WHAT WE DO</a></li>
+                    <li><a href="">LEARN</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="">CONNECT</a></li>
+                    <li><a href="">CONTACT</a></li>
+                    <li><a href="">LOGIN</a></li>
+                </ul>
+            </div>
+            <div class="search eff03"><img src="../img/Vector.png" alt=""></div>
+        </div>
+    </header>
+    <!-- End Header -->
+    <main class="main-wrap">
+ 
+        <div class="search-wrap">
+            <div class="input-wrap">
+                <input type="text" placeholder="Search">
+
+                <div class="search_close eff03">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="welcome_wrap" style="background-image: url(../img/ALC-laboratory.png);">
+            <div class="overlay"></div>
+            <div class="inner-wrap">
+                <div class="text">
+                    <h1>Peer Reviewed Clinical Studies of Biofield Therapies</h1>
+                    <p>Description Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                    <button class="btn">Using Map</button>
+                </div>
+            </div>
+        </section>
+        <section class="filter_data">
+            <div class="inner-wrap">
+                <h1>Play with the Data!</h1>
+                <div class="select-sll">
+                    <label for="SelectAll">
+                        <input type="checkbox" id="SelectAll" checked="true" onclick="toggleSelections(this);">
+                        <span class="label-text">Select All</span>
+                    </label>
+                </div>
+                <div class="checkbox-wrap">
+                    <div>
+                        <h2>Countries</h2>
+                        <ul>
+                            <li>
+                                <label for="USA">
+                                    <input type="checkbox" checked="true" name="US/non-US/unknown" id="USA" onclick="selectStudiesByLocation()">
+                                    <span class="label-text">Australia</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="NON-USA">
+                                    <input type="checkbox" name="US/non-US/unknown" id="NON-USA" onclick="selectStudiesByLocation()" checked="true">
+                                    <span class="label-text">Brazil</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="UNKNOWN">
+                                    <input type="checkbox" name="US/non-US/unknown" id="UNKNOWN" onclick="selectStudiesByLocation()" checked="true">
+                                    <span class="label-text">Canada</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Denmark</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Greece</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Italy</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Mozambique</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>All Years</h2>
+                        <ul>
+                            <li>
+                                <label for="2016-17">
+                                    <input type="checkbox" name="Year" id="2016-17" onclick="selectStudiesByLocation()" checked="true">
+                                    <span class="label-text">2015-2019</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="2011-15">
+                                    <input type="checkbox" name="Year" id="2011-15" onclick="selectStudiesByLocation()" checked="true">
+                                    <span class="label-text">2010-2015</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="2006-10">
+                                    <input type="checkbox" name="Year" id="2006-10" onclick="selectStudiesByLocation()" checked="true">
+                                    <span class="label-text">2005-2009</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="2001-05">
+                                    <input type="checkbox" name="Year" id="2001-05" onclick="selectStudiesByLocation()" checked="true">
+                                    <span class="label-text">2000-2004</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="2000-Earlier">
+                                    <input type="checkbox" name="Year" id="2000-Earlier" onclick="selectStudiesByLocation()" checked="true">
+                                    <span class="label-text">1900-1999</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">1980-1988</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="label-text">1970-1979</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Study Design</h2>
+                        <ul>
+                            <li>
+                                <label for="Case series">
+                                    <input type="checkbox" name="Study" id="Case series" onclick="selectStudiesByLocation()" checked="true">
+                                    <span class="label-text">Randomized Controlled Trial (parallel)</span>
+                                </label>
+                            </li>
+                            <li>  
+                            <li>
+                                <label for="Randomized controlled trial">
+                                    <input type="checkbox" name="Study" id="RCT" onclick="selectStudiesByRCT()" checked="true">
+                                    <span class="label-text">Nonrandomized Controlled Trial</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="Subcircles">
+                                    <input type="checkbox" name="Study" id="Subcircles" onclick="selectStudiesByIntervention()" checked="true">
+                                    <span class="label-text">Placebo/Sham Control</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Active Control (time and attention/head to head)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="label-text">Cohort Study (Prospective Observational Study)</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="label-text">Cohort Study (Retrospective cohort)</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Primary Outcome</h2>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Quality of Life</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Pain</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Anxiety</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Depression</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Stress</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Post-Traumatic Stress</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">General Mood</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Biofield Modality</h2>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Intercessory prayer</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Hands on healing</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Distant Healing</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="label-text">Reiki</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Pranic Healing</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="label-text">Therapeutic Touch</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="label-text">Healing Touch</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <button class="btn"><i class="fas fa-filter"></i> Filter</button> -->
+                <div class="chart_js">
+                    <div id="ampiechart1"></div>
+                </div>
+                <div id="legend"></div>
+                <div class="chart_text">
+                    <h1>Nontouch Biofield Therapy</h1>
+                    <p> A Systematic Review of Human Randomized Controlled Trials Reporting Use of Only Nonphysical Contact Treatment</p>
+                </div>
+                <div id="svg-container"></div>
+                <div class="toolTip"></div>
+                <div class="checkbox-wrap">
+                    <div>
+                        <h2>Primary Outcome</h2>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Quality of Life</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Pain</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Anxiety</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Depression</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Stress</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Post-Traumatic Stress</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">General Mood</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Biofield Modality</h2>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Intercessory prayer</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Hands on healing</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Distant Healing</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="label-text">Reiki</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="checked">
+                                    <span class="label-text">Pranic Healing</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="label-text">Therapeutic Touch</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="label-text">Healing Touch</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="inner-wrap">
+            <div class="top-wrap">
+                <div class="logo">
+                    <img src="../img/logo2.png" alt="">
+                </div>
+                <button class="btn">Sign Up</button>
+            </div>
+            <div class="bottom-wrap">
+                <div>
+                    <h1>Quick Links</h1>
+                    <ul>
+                        <li><a href="">About CHI</a></li>
+                        <li><a href="">What We Do</a></li>
+                        <li><a href="">Join</a></li>
+                        <li><a href="">Resources</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h1>Connect</h1>
+                    <ul>
+                        <li><a>Consciousness and Healing Initiative (CHI) 6919 La Jolla Blvd La Jolla, CA 92037 </a></li>
+                        <li><a>(619) 363-3218</a></li>
+                        <li><a>admin@chi.is</a></li>
+                    </ul>
+                </div>
+                <div class="back">
+                    Use of this website is for informational purposes only, is not intended to substitute for medical advice.FAIR USE NOTICE: This Site May Contain Copyrighted Material. Such Material Is Made Available For Educational Purposes Only. This Constitutes A ‘Fair Use’ Of Any Such Copyrighted Material As Provided For In Title 17 U.S.C. Section 106A-117 Of The US Copyright Law. Some data is collected as you use the website to enhance your experience. As a user, member, or newsletter subscriber, your personal information is never for sale.
+                </div>
+            </div>
+            <div class="copyright">Copyright ©<script>
+                document.write(new Date().getFullYear());
+                </script> Consciousness and Healing Initiative (CHI) - All Rights Reserved</div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script src="../js/d3.v4.min.js"></script>
+    <script type="text/javascript" src="../js/map1.js"></script>
+    <script src="../js/Chart.min.js"></script>
+    <script src="../js/amcharts.js"></script>
+    <script src="../js/pie.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+</body>
+
+</html>
