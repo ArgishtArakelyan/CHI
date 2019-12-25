@@ -15,7 +15,7 @@
     <header class="navigation-wrap eff03">
         <div class="inner-wrap">
             <div class="logo"><a href=""><img src="../img/logo1.png" alt=""></a></div>
-
+            
             <div class="m-lines">
                 <div class="vh-centered">
                     <div class="one"></div>
@@ -176,7 +176,12 @@
                                     <span class="label-text">Randomized Controlled Trial (parallel)</span>
                                 </label>
                             </li>
-                            <li>  
+                            <li>
+                                <label for="CT">
+                                    <input type="checkbox" name="Study" id="CT" onclick="selectStudiesByLocation()" checked="true">
+                                    <span class="label-text">Randomized Controlled Trial (crossover/waitlist)</span>
+                                </label>
+                            </li>
                             <li>
                                 <label for="Randomized controlled trial">
                                     <input type="checkbox" name="Study" id="RCT" onclick="selectStudiesByRCT()" checked="true">
