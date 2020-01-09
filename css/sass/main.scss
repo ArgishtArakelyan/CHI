@@ -7,7 +7,7 @@
 $defaultTextColor: #333;
 
 $blueColor: #08428C;
- 
+
 
 html {
     height: 100%;
@@ -23,7 +23,7 @@ html {
     z-index: 1;
     position: relative;
     font-family: 'Ubuntu', sans-serif;
- 
+
 }
 
 h1,
@@ -339,10 +339,12 @@ a {
     right: 0;
     z-index: 2;
     height: 106px;
+
     &.bg-shap {
         height: 80px;
         box-shadow: 0 0 8px -4px #08428c;
     }
+
     .inner-wrap {
         height: 100%;
         display: flex;
@@ -396,8 +398,8 @@ a {
             color: #8B8B8B;
             cursor: pointer;
 
-            &:hover{
-               // border-color: $blueColor;
+            &:hover {
+                // border-color: $blueColor;
                 background: #EBEBEB;
             }
 
@@ -609,13 +611,17 @@ footer {
                 list-style: none;
                 font-weight: 300;
                 font-size: 18px;
+                line-height: 25px;
                 margin-bottom: 4px;
-                a{
+
+                a {
                     display: block;
-                    &:hover{
+
+                    &:hover {
                         color: #08428C;
                     }
                 }
+
                 &:last-child {
                     margin: 0;
                 }
@@ -637,6 +643,11 @@ footer {
                 @include border-r(42px);
                 padding: 40px;
                 margin-top: 50px;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 25px;
+                text-transform: capitalize;
+
                 &:before {
                     content: url('../../img/as2.png');
                     position: absolute;
@@ -672,10 +683,8 @@ footer {
 
 
 
-.bubble{
-    &:hover{
-
-    }
+.bubble {
+    &:hover {}
 }
 
 
@@ -745,12 +754,6 @@ label input[type="checkbox"]:checked+.label-text:before {
     src: url("../fonts/FiraSansExtraCondensed-regular.ttf");
 }
 
-html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
-    font-family: FiraExtraCondensed-ExtraLight, Helvetica, Arial, sans-serif;
-}
 
 
 ::-moz-selection {
@@ -763,9 +766,7 @@ html {
     text-shadow: none;
 }
 
-/*
-  * A better looking default horizontal rule
-  */
+
 
 hr {
     display: block;
@@ -915,18 +916,18 @@ text {
     height: auto;
     background: none repeat scroll 0 0 lightgray;
     padding: 20px 50px 20px 20px;
-    border-radius: 4px;
+    @include border-r(4px);
     text-align: left;
- 
+
     color: #5b6770;
     box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.15);
     /** @todo font for hovers, aka 'tooltips' */
-font-weight: 500;
-font-size: 20px;
-line-height: 35px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 35px;
 
-    span{
-        h1{
+    span {
+        h1 {
             font-weight: 500;
             font-size: 26px;
             line-height: 35px;
@@ -935,28 +936,25 @@ line-height: 35px;
     }
 }
 
-.toolTip:after {}
+
 
 .toolTip span {
     font-weight: 500;
     color: #081f2c;
 }
 
-/** @todo width of breaks in popup large legend */
+
 .toolTip br {
     display: block;
-    /* makes it have a width */
     content: "";
-    /* clears default height */
     margin-top: 5px;
-    /* @todo change this to whatever height you want it */
 }
 
 .legend-text {
     margin: 0 5px 20px 5px;
     height: auto;
     padding: 20px 50px 20px 20px;
-    border-radius: 4px;
+    @include border-r(4px);
     text-align: left;
     line-height: 1.3;
     color: #222;
@@ -966,23 +964,18 @@ line-height: 35px;
     background-color: #eee;
 }
 
-/** @todo width of breaks in popup large legend */
 .legend-text br {
     display: block;
-    /* makes it have a width */
     content: "";
-    /* clears default height */
     margin-top: 10px;
-    /* @todo change this to whatever height you want it */
 }
 
-/** @todo XY Axises on Evidence Map 3 */
+
 .map3 {
     font-size: 14px;
     min-width: 1280px;
 }
 
-/** @todo width of the headers in map 3 */
 .map3 th {
     width: 120px;
 }
@@ -996,7 +989,6 @@ line-height: 35px;
     margin-bottom: 16px;
 }
 
-/** @todo width of the headers in map 3 */
 .map3 th {
     border: 1px solid lightgray;
     width: 80px;
@@ -1029,7 +1021,6 @@ line-height: 35px;
     display: inline;
 }
 
-/** These are for filtering */
 
 .h-bar {
     min-height: 15px;
@@ -1045,7 +1036,6 @@ line-height: 35px;
 }
 
 h1 {
-    font-family: FiraExtraCondensed-ExtraLight, Helvetica, Arial, sans-serif;
     font-size: 28px;
 }
 
@@ -1109,7 +1099,7 @@ h1 {
 }
 
 .domain {
-    stroke: #959595 !important; 
+    stroke: #959595 !important;
 }
 
 .map1 .tick line {
@@ -1182,8 +1172,6 @@ h1 {
     display: none !important;
 }
 
-
-
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -1196,7 +1184,6 @@ h1 {
     position: absolute;
     width: 1px;
     white-space: nowrap;
-    /* 1 */
 }
 
 
@@ -1222,9 +1209,7 @@ h1 {
 .clearfix:before,
 .clearfix:after {
     content: " ";
-    /* 1 */
     display: table;
-    /* 2 */
 }
 
 .clearfix:after {
@@ -1263,8 +1248,6 @@ h1 {
     abbr[title]:after {
         content: " ("attr(title) ")";
     }
-
-
 
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
@@ -1313,39 +1296,56 @@ h1 {
     width: 100%;
 }
 
-
-.legendItem{
-    &:nth-child(1){
+.legendItem {
+    &:nth-child(1) {
         transform: translate(100px, 50px);
     }
-    &:nth-child(2){
+
+    &:nth-child(2) {
         transform: translate(560px, 50px);
     }
-    &:nth-child(3){
+
+    &:nth-child(3) {
         transform: translate(100px, 100px);
     }
-    &:nth-child(4){
+
+    &:nth-child(4) {
         transform: translate(560px, 100px);
     }
 }
 
-.chart_js{
-    a{
+.chart_js {
+    a {
         display: none !important;
     }
 }
 
-#ampiechart1{
+#ampiechart1 {
     height: 380px;
     width: 100%;
 }
 
- 
+.graphic-text {
+
+    font-size: 24px;
+    line-height: 45px;
+    padding-left: 40px;
+    margin-bottom: 64px;
+
+    span {
+        font-weight: 600;
+        color: #000000;
+
+        a{
+            color: #08428C;
+        }
+    }
+}
 
 
 
 
-.search-wrap{
+.search-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1354,30 +1354,28 @@ h1 {
     right: 0;
     top: 0;
     width: 100%;
-   
     transition: all 0.6s ease;
     will-change: transform;
     z-index: 12;
     opacity: 0;
     visibility: hidden;
     height: 0;
+
     &.search_bg {
         opacity: 1;
         visibility: visible;
         height: 100%;
     }
+
     .input-wrap {
         position: relative;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        border-radius: 4px;
+        @include border-r(4px);
         background: #fff;
         width: 100%;
         max-width: 600px;
         margin: 0 16px;
- 
-        input{
+
+        input {
             border: 0;
             width: 100%;
             padding: 18px 73px 18px 24px;
@@ -1385,9 +1383,10 @@ h1 {
             font-size: 32px;
             color: #363B3E;
             background: transparent;
- 
+
         }
-        .search_close{
+
+        .search_close {
             position: absolute;
             right: 0;
             top: 0;
@@ -1400,13 +1399,11 @@ h1 {
             color: #08428C;
             cursor: pointer;
 
-            &:hover{
+            &:hover {
                 transform: rotate(180deg);
                 color: #295a93;
             }
         }
-
-
     }
 }
 
@@ -1436,7 +1433,8 @@ h1 {
                     -ms-transform: rotate(45deg) translate(3px, 3px);
                     -webkit-transform: rotate(45deg) translate(3px, 3px);
                     transform: rotate(45deg) translate(3px, 3px);
-                    background-color: #565656;;
+                    background-color: #565656;
+                    ;
                     width: 22px;
                 }
 
@@ -1445,7 +1443,8 @@ h1 {
                     -ms-transform: rotate(-45deg) translate(4px, -4px);
                     -webkit-transform: rotate(-45deg) translate(4px, -4px);
                     transform: rotate(-45deg) translate(4px, -4px);
-                    background-color: #565656;;
+                    background-color: #565656;
+                    ;
                     width: 22px;
                 }
             }
@@ -1458,11 +1457,8 @@ h1 {
         >div {
             width: 18px;
             height: 2px;
-            background: #565656;;
-            -webkit-border-radius: 1px;
-            -moz-border-radius: 1px;
-            -ms-border-radius: 1px;
-            border-radius: 1px;
+            background: #565656;
+            @include border-r(1px);
             margin: 3px auto;
             backface-visibility: hidden;
             -moz-transition-duration: 0.3s;
@@ -1472,25 +1468,3 @@ h1 {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

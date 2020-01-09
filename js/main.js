@@ -51,15 +51,15 @@ if ($('#ampiechart1').length) {
         "labelRadius": -35,
         "labelText": "[[percents]]%",
         "dataProvider": [{
-            "country": "Randomized Controlled Trial (parallel)",
+            "country": "Person to Person (non-contact distant)",
             "litres": 40,
             "backgroundColor": "#fa8e7e"
         }, {
-            "country": "Quasi Experimental",
+            "country": "Self-Healing",
             "litres": 10,
             "backgroundColor": "#12c9d4"
         }, {
-            "country": "Observational Study",
+            "country": "Person to person (non-contact proximal)",
             "litres": 22,
             "backgroundColor": "#ff5794"
         }, {
@@ -103,11 +103,11 @@ function renderLegend() {
     // BEN-EDIT: updated vertical alignment parameters below to dynamic rational values.
     // Horizontal values are still hard-coded.
     var color = d3.scaleOrdinal()
-        .domain(["RCT", "Controlled Trial", "Quasi Experimental", "Explanatory sequential mixed method design"])
+        .domain(["RCT", "Controlled Trial", "Self-Healing", "Person to Person (contact)"])
         .range(["#FA8E7E", "#FF5492", "#00C3CF", "#6772E6"]);
 
     var legendXPosition = d3.scalePoint()
-        .domain(["RCT", "Controlled Trial", "Quasi Experimental", "Explanatory sequential mixed method design"])
+        .domain(["RCT", "Controlled Trial", "Self-Healing", "Person to Person (contact)"])
         .range([300, legendWidth - 150]);
 
     var legend = d3.select("#legend")
@@ -158,9 +158,9 @@ function renderLegend() {
         //.attr("dy", ".35em")
         .text(function(d, i) {
             if (d == "Controlled Trial") {
-                return "Observational Study";
+                return "Person to person (non-contact proximal)";
             } else if (d == "RCT") {
-                return "Randomized Controlled Trial (parallel)";
+                return "Person to Person (non-contact distant)";
             } else {
                 return d
             }
@@ -336,7 +336,7 @@ function selectStudiesByLocation() {
     var prunedDataSet =
         prunedDataSet.filter(function(d) {
             return (
-                locationsToInclude.indexOf(d["US/non-US/unknown"]) != -1 && yearsToInclude.indexOf(d["Year"]) != -1 && studiesToInclude.indexOf(d["Study Design"]) != -1)
+                locationsToInclude.indexOf(d["US/non-US/unknown"]) != -1 && yearsToInclude.indexOf(d["Year"]) != -1 && studiesToInclude.indexOf(d["Article Citation"]) != -1)
         });
 
     render(prunedDataSet);
@@ -371,7 +371,7 @@ g.append("g")
 var treatmentCategories = ["Pharmacologic", "Exercise", "Behavioral/Education", "Complementary and alternative medicine", "Combination", "Other"];
 
 var xScale = d3.scalePoint()
-    .domain(treatmentCategories)
+    //.domain(treatmentCategories)
     .range([0, width])
     .padding(1);
 
@@ -423,7 +423,7 @@ function render(dataset) {
     var totalPatients = 0;
 
     dataset.forEach(function(d) {
-        var studyDesignPlusInterventionCategory = d["Study Design"] + " " + d["Category of intervention"];
+        var studyDesignPlusInterventionCategory = d["Article Citation"] + " " + d["Category of intervention"];
         var skipStudy = d["Skip for study count"];
         var patientCount = (d["# of pts for map 1"] === "NR") ? 0 : d["# of pts for map 1"];
 
@@ -434,7 +434,7 @@ function render(dataset) {
         } else {
             mapStudies[studyDesignPlusInterventionCategory] = {
                 "Number of patients": patientCount,
-                "Study Design": d["Study Design"],
+                "Article Citation": d["Article Citation"],
                 "Category of intervention": d["Category of intervention"],
                 "Specific intervention": d["Specific intervention"],
                 "US/non-US/unknown": d["US/non-US/unknown"],
@@ -445,7 +445,7 @@ function render(dataset) {
         if (!mapStudies[studyDesignPlusInterventionCategory].children) {
             mapStudies[studyDesignPlusInterventionCategory].children = []
         }
-        if (d['Study Design'] === 'RCT') {
+        if (d['Article Citation'] === 'RCT') {
             var circleIndex = mapStudies[studyDesignPlusInterventionCategory].children.map(function(c) { return c.circleType }).indexOf(d['Intervention Circle']);
 
             if (circleIndex == -1) {
@@ -514,7 +514,7 @@ function render(dataset) {
                 }
                 return true;
             }),
-            function(d) { return d["Study Design"] + " --- " + d["Category of intervention"]; });
+            function(d) { return d["Article Citation"] + " --- " + d["Category of intervention"]; });
 
     circles.exit().transition().attr("r", 0).remove();
 
@@ -525,7 +525,7 @@ function render(dataset) {
         .attr("r", 0)
         .attr("cx", function(d, i) {
             if (d.depth === 0) {
-                return studyDesignBubbleOffset[d.data["Study Design"]] +
+                return studyDesignBubbleOffset[d.data["Article Citation"]] +
                     (treatmentCategories.indexOf(d.data["Category of intervention"]) + 1) * (width / (treatmentCategories.length + 1));
             } else {
                 return 0;
@@ -541,7 +541,7 @@ function render(dataset) {
         .merge(circles)
         .attr("fill", function(d) {
             if (d.depth === 0) {
-                return studyDesignBubbleColors[d.data["Study Design"]];
+                return studyDesignBubbleColors[d.data["Article Citation"]];
             } else {
                 return '#607F8E'
             }
@@ -557,7 +557,7 @@ function render(dataset) {
                     .style("left", d3.event.pageX + 10 + "px")
                     .style("top", d3.event.pageY - 70 + "px")
                     .style("display", "inline-block")
-                    .html("<span><h1>Study Design: " + d.data["Study Design"] + "</h1>" + "<br><b>Category of intervention:</b> " + d.data["Category of intervention"] + "<br><b>Number of patients:</b> " + d.data["Number of patients"] + "<br><b>Studies:</b> " + d.data["Studies"] + "</span><br>");
+                    .html("<span><h1>Article Citation: " + d.data["Article Citation"] + "</h1>" + "<br><b>Category of intervention:</b> " + d.data["Category of intervention"] + "<br><b>Number of patients:</b> " + d.data["Number of patients"] + "<br><b>Studies:</b> " + d.data["Studies"] + "</span><br>");
             } else {
 
                 d3.select(this)
@@ -575,7 +575,7 @@ function render(dataset) {
         .on("mouseout", function(d, i) {
             d3.select(this).attr("fill", function(d) {
                 if (d.depth === 0) {
-                    return studyDesignBubbleColors[d.data["Study Design"]];
+                    return studyDesignBubbleColors[d.data["Article Citation"]];
                 } else {
                     return '#607F8E'
                 }
@@ -585,10 +585,10 @@ function render(dataset) {
         })
         .transition().attr("cx", function(d, i) {
             if (d.depth === 0) {
-                return studyDesignBubbleOffset[d.data["Study Design"]] +
+                return studyDesignBubbleOffset[d.data["Article Citation"]] +
                     (treatmentCategories.indexOf(d.data["Category of intervention"]) + 1) * (width / (treatmentCategories.length + 1));
             } else {
-                var parentX = studyDesignBubbleOffset[d.parent.data["Study Design"]] +
+                var parentX = studyDesignBubbleOffset[d.parent.data["Article Citation"]] +
                     (treatmentCategories.indexOf(d.parent.data["Category of intervention"]) + 1) * (width / (treatmentCategories.length + 1));
                 var parentRadius = Math.sqrt((d.parent.data["Number of patients"] * 10) / Math.PI);
                 return (d.x - 0.5) * (parentRadius * 2) + parentX;
