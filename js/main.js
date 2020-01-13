@@ -51,19 +51,19 @@ if ($('#ampiechart1').length) {
         "labelRadius": -35,
         "labelText": "[[percents]]%",
         "dataProvider": [{
-            "country": "Person to Person (non-contact distant)",
+            "country": "Person to Person (contact)",
             "litres": 40,
             "backgroundColor": "#fa8e7e"
         }, {
-            "country": "Self-Healing",
+            "country": "Person to person (non-contact proximal)",
             "litres": 10,
             "backgroundColor": "#12c9d4"
         }, {
-            "country": "Person to person (non-contact proximal)",
+            "country": "Person to Person (non-contact distant)",
             "litres": 22,
             "backgroundColor": "#ff5794"
         }, {
-            "country": "Explanatory sequential mixed method design",
+            "country": "Self-Healing",
             "litres": 28,
             "backgroundColor": "#6772e6"
         }],
@@ -103,11 +103,11 @@ function renderLegend() {
     // BEN-EDIT: updated vertical alignment parameters below to dynamic rational values.
     // Horizontal values are still hard-coded.
     var color = d3.scaleOrdinal()
-        .domain(["RCT", "Controlled Trial", "Self-Healing", "Person to Person (contact)"])
+        .domain(["RCT", "Controlled Trial", "Person to person (non-contact proximal)", "Self-Healing"])
         .range(["#FA8E7E", "#FF5492", "#00C3CF", "#6772E6"]);
 
     var legendXPosition = d3.scalePoint()
-        .domain(["RCT", "Controlled Trial", "Self-Healing", "Person to Person (contact)"])
+        .domain(["RCT", "Controlled Trial", "Person to person (non-contact proximal)", "Self-Healing"])
         .range([300, legendWidth - 150]);
 
     var legend = d3.select("#legend")
@@ -158,9 +158,9 @@ function renderLegend() {
         //.attr("dy", ".35em")
         .text(function(d, i) {
             if (d == "Controlled Trial") {
-                return "Person to person (non-contact proximal)";
-            } else if (d == "RCT") {
                 return "Person to Person (non-contact distant)";
+            } else if (d == "RCT") {
+                return "Person to Person (contact)";
             } else {
                 return d
             }

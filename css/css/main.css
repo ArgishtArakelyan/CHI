@@ -399,11 +399,11 @@ a {
       cursor: pointer; }
   .filter_data .inner-wrap .chart_text {
     text-align: left;
-    margin: 40px 0; }
+    margin: 64px 0 48px; }
     .filter_data .inner-wrap .chart_text h1 {
       font-size: 36px;
       font-weight: normal;
-      line-height: 40px;
+      line-height: 56px;
       color: #08428C; }
     .filter_data .inner-wrap .chart_text p {
       font-size: 24px;
@@ -978,7 +978,6 @@ h1 {
   margin-left: 8px; }
 
 #svg-container > svg {
-  padding-bottom: 5px;
   width: 100%; }
 
 .legendItem:nth-child(1) {
