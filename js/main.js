@@ -569,7 +569,7 @@ function render(dataset) {
                     .style("left", d3.event.pageX + 10 + "px")
                     .style("top", d3.event.pageY - 70 + "px")
                     .style("display", "inline-block")
-                    .html("<span><b>Intervention : </b>" + d.data['circleType'] + "<br/><b>Number of patients:</b> " + d.data['value'] + "</span>")
+                    .html("<span><h1>Self-Healing</h1><b>Intervention : </b>" + d.data['circleType'] + "<br/><b>Number of patients:</b> " + d.data['value'] + "</span>")
             }
         })
         .on("mouseout", function(d, i) {
