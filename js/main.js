@@ -557,7 +557,7 @@ function render(dataset) {
                     .style("left", d3.event.pageX + 10 + "px")
                     .style("top", d3.event.pageY - 70 + "px")
                     .style("display", "inline-block")
-                    .html("<span><h1>Article Citation: " + d.data["Article Citation"] + "</h1>" + "<br><b>Category of intervention:</b> " + d.data["Category of intervention"] + "<br><b>Number of patients:</b> " + d.data["Number of patients"] + "<br><b>Studies:</b> " + d.data["Studies"] + "</span><br>");
+                    .html("<span><h1>" + d.data["Article Citation"] + "</h1>" + "<br><b>Category of intervention:</b> " + d.data["Category of intervention"] + "<br><b>Number of patients:</b> " + d.data["Number of patients"] + "<br><b>Studies:</b> " + d.data["Studies"] + "</span><br>");
             } else {
 
                 d3.select(this)
