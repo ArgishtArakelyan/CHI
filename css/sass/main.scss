@@ -907,41 +907,27 @@ text {
     text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
 }
 
+
+
 .toolTip {
-    pointer-events: all;
-    position: absolute;
-    display: none;
-    min-width: 50px;
-    width: auto;
-    height: auto;
-    background: none repeat scroll 0 0 lightgray;
-    padding: 20px 50px 20px 20px;
-    @include border-r(4px);
-    text-align: left;
-
-    color: #5b6770;
-    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.15);
-    /** @todo font for hovers, aka 'tooltips' */
     font-weight: 500;
-    font-size: 20px;
-    line-height: 35px;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 8px;
+    color: #000;
 
-    span {
-        h1 {
-            font-weight: 500;
-            font-size: 26px;
-            line-height: 35px;
-            color: #08428C;
-        }
+    a{
+        font-weight: 500;
+        font-size: 20px;
+        color: #08428C;
+        margin-bottom: 8px;
+        display: block;
     }
 }
 
 
 
-.toolTip span {
-    font-weight: 500;
-    color: #081f2c;
-}
+ 
 
 
 .toolTip br {
@@ -950,26 +936,9 @@ text {
     margin-top: 5px;
 }
 
-.legend-text {
-    margin: 0 5px 20px 5px;
-    height: auto;
-    padding: 20px 50px 20px 20px;
-    @include border-r(4px);
-    text-align: left;
-    line-height: 1.3;
-    color: #222;
-    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.15);
-    /** @todo font for hovers, aka 'tooltips' */
-    font-size: 13px;
-    background-color: #eee;
-}
+ 
 
-.legend-text br {
-    display: block;
-    content: "";
-    margin-top: 10px;
-}
-
+ 
 
 .map3 {
     font-size: 14px;
@@ -1301,7 +1270,7 @@ h1 {
     }
 
     &:nth-child(2) {
-        transform: translate(560px, 50px);
+        transform: translate(490px, 50px);
     }
 
     &:nth-child(3) {
@@ -1309,7 +1278,7 @@ h1 {
     }
 
     &:nth-child(4) {
-        transform: translate(560px, 100px);
+        transform: translate(490px, 100px);
     }
 }
 
@@ -1466,4 +1435,13 @@ h1 {
             transition-duration: 0.3s;
         }
     }
+}
+
+#chartdiv {
+  width: 100%;
+  height: 600px
+}
+
+g[aria-labelledby="id-66-title"]{
+    display: none;
 }

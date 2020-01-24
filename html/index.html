@@ -68,15 +68,12 @@
 
 
                 <!-- <button class="btn"><i class="fas fa-filter"></i> Filter</button> -->
-                <div class="chart_js">
-                    <div id="ampiechart1"></div>
-                </div>
-                <div id="legend"></div>
+
+                
                 <div class="chart_text">
                     <h1> A Landscape Map of Peer-Reviewed Clinical Studies on Biofield Therapies </h1>
                 </div>
-                <div id="svg-container"></div>
-                <div class="toolTip"></div>
+                <div id="chartdiv"></div>
 
 
                 <div class="graphic-text">
@@ -87,8 +84,8 @@
                 </div>
                 <h1>Play with the Data!</h1>
                 <div class="select-sll">
-                    <label for="SelectAll">
-                        <input type="checkbox" id="SelectAll" checked="true" onclick="toggleSelections(this);">
+                    <label>
+                        <input type="checkbox" id="SelectAll" checked="true">
                         <span class="label-text">Select All</span>
                     </label>
                 </div>
@@ -98,20 +95,20 @@
                         <h2>Countries</h2>
                         <ul>
                             <li>
-                                <label for="USA">
-                                    <input type="checkbox" checked="true" name="US/non-US/unknown" id="USA" onclick="selectStudiesByLocation()">
+                                <label>
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Australia</span>
                                 </label>
                             </li>
                             <li>
-                                <label for="NON-USA">
-                                    <input type="checkbox" name="US/non-US/unknown" id="NON-USA" onclick="selectStudiesByLocation()" checked="true">
+                                <label>
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Brazil</span>
                                 </label>
                             </li>
                             <li>
-                                <label for="UNKNOWN">
-                                    <input type="checkbox" name="US/non-US/unknown" id="UNKNOWN" onclick="selectStudiesByLocation()" checked="true">
+                                <label>
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Canada</span>
                                 </label>
                             </li>
@@ -158,45 +155,45 @@
                         <h2>All Years</h2>
                         <ul>
                             <li>
-                                <label for="2016-17">
-                                    <input type="checkbox" name="Year" id="2016-17" onclick="selectStudiesByLocation()" checked="true">
-                                    <span class="label-text">2015-2019</span>
+                                <label>
+                                    <input type="checkbox" checked="true">
+                                    <span class="label-text">2015-2020</span>
                                 </label>
                             </li>
                             <li>
-                                <label for="2011-15">
-                                    <input type="checkbox" name="Year" id="2011-15" onclick="selectStudiesByLocation()" checked="true">
+                                <label>
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">2010-2015</span>
                                 </label>
                             </li>
                             <li> 
-                                <label for="2006-10">
-                                    <input type="checkbox" name="Year" id="2006-10" onclick="selectStudiesByLocation()" checked="true">
-                                    <span class="label-text">2005-2009</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label for="2001-05">
-                                    <input type="checkbox" name="Year" id="2001-05" onclick="selectStudiesByLocation()" checked="true">
-                                    <span class="label-text">2000-2004</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label for="2000-Earlier">
-                                    <input type="checkbox" name="Year" id="2000-Earlier" onclick="selectStudiesByLocation()" checked="true">
-                                    <span class="label-text">1900-1999</span>
+                                <label>
+                                    <input type="checkbox" checked="true">
+                                    <span class="label-text">2005-2010</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
-                                    <span class="label-text">1980-1988</span>
+                                    <input type="checkbox" checked="true">
+                                    <span class="label-text">2000-2005</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox">
-                                    <span class="label-text">1970-1979</span>
+                                    <input type="checkbox" checked="true">
+                                    <span class="label-text">1995-2000</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="true">
+                                    <span class="label-text">1990-1995</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" checked="true">
+                                    <span class="label-text">1985-1990</span>
                                 </label>
                             </li>
                         </ul>
@@ -205,43 +202,43 @@
                         <h2>Research Design</h2>
                         <ul>
                             <li>
-                                <label for="Case series">
-                                    <input type="checkbox" name="Study" id="Case series" onclick="selectStudiesByLocation()" checked="true">
+                                <label>
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Randomized Control Trial</span>
                                 </label>
                             </li>
                             <li>
-                                <label for="CT">
-                                    <input type="checkbox" name="Study" id="CT" onclick="selectStudiesByLocation()" checked="true">
+                                <label>
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Quasi Experimental</span>
                                 </label>
                             </li>
                             <li> 
-                                <label for="Randomized controlled trial">
-                                    <input type="checkbox" name="Study" id="RCT" onclick="selectStudiesByRCT()" checked="true">
+                                <label>
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Mixed Methods</span>
                                 </label>
                             </li>
                             <li>
-                                <label for="Subcircles">
-                                    <input type="checkbox" name="Study" id="Subcircles" onclick="selectStudiesByIntervention()" checked="true">
+                                <label>
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Qualitative</span>
                                 </label>
                             </li>
                             <li>
-                                <label for="Subcircles">
+                                <label>
                                     <input type="checkbox" checked="true">
                                     <span class="label-text">Observational</span>
                                 </label>
                             </li>
                             <li>
-                                <label for="Subcircles">
+                                <label>
                                     <input type="checkbox" checked="true">
                                     <span class="label-text">Pilot or Feasibility Study</span>
                                 </label>
                             </li>
                             <li>
-                                <label for="Subcircles">
+                                <label>
                                     <input type="checkbox" checked="true">
                                     <span class="label-text">Case Reports</span>
                                 </label>
@@ -254,55 +251,55 @@
                         <ul>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Anxiety</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Biomarker(s)</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Depression</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Mood</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Pain</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Post Traumatic Stress symptoms/Severity</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Quality of Life</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Stress</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Other</span>
                                 </label>
                             </li>
@@ -313,63 +310,63 @@
                         <ul>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Energy Psychology</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Distant Healing</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Healing Touch</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Intercessory prayer</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Johrei</span>
                                 </label>
                             </li>                            
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Reiki</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Therapeutic Touch</span>
                                 </label>
                             </li>
 
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Shamanic Healing</span>
                                 </label>
                             </li>
 
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Qigong/Qi Therapy</span>
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="checkbox" checked="checked">
+                                    <input type="checkbox" checked="true">
                                     <span class="label-text">Other</span>
                                 </label>
                             </li>
@@ -414,13 +411,12 @@
                 document.write(new Date().getFullYear());
                 </script> Consciousness and Healing Initiative (CHI) - All Rights Reserved</div>
         </div>
+ 
     </footer>
     <script type="text/javascript" src="../js/jquery.js"></script>
-    <script src="../js/d3.v4.min.js"></script>
-    <script type="text/javascript" src="../js/map1.js"></script>
-    <script src="../js/Chart.min.js"></script>
-    <script src="../js/amcharts.js"></script>
-    <script src="../js/pie.js"></script>
+    <script src="../js/core.js"></script>
+    <script src="../js/charts.js"></script>
+    <script src="../js/animated.js"></script>
     <script type="text/javascript" src="../js/main.js"></script>
 </body>
 
