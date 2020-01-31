@@ -130,7 +130,25 @@ chart.data = [
 
         "category": "category1",
         "title": "Person to Person (contact)",
-        "color": "#0D4D8E",
+        "color": "#3e80c3",
+        "x": 100,
+        "y": 14,
+        "value": 33397058
+    },
+    {
+
+        "category": "category1",
+        "title": "Person to Person (contact)",
+        "color": "#3e80c3",
+        "x": 40,
+        "y": 14,
+        "value": 33397058
+    },
+    {
+
+        "category": "category1",
+        "title": "Person to Person (contact)",
+        "color": "#3e80c3",
         "x": 100,
         "y": 20,
         "value": 33397058
@@ -141,6 +159,14 @@ chart.data = [
         "color": "#F8C847",
         "x": 200,
         "y": 20,
+        "value": 33397058
+    },
+    {
+        "category": "category2",
+        "title": "Person to person (non-contact proximal)",
+        "color": "#F8C847",
+        "x": 40,
+        "y": 10,
         "value": 33397058
     },
     {
@@ -211,6 +237,14 @@ chart.data = [
         "category": "category5",
         "title": "rootCat5",
         "color": "#3db3d8",
+        "x": 190,
+        "y": 11,
+        "value": 33397058
+    },
+    {
+        "category": "category5",
+        "title": "rootCat5",
+        "color": "#3db3d8",
         "x": 180,
         "y": 11,
         "value": 33397058
@@ -223,6 +257,8 @@ let exist = [];
 let newArray = [];
 
 chart.legend = new am4charts.Legend();
+ 
+
 
 chart.data.forEach(function (el) {
    if (!inArray(el.category, exist)) {
@@ -266,4 +302,3 @@ function inArray(needle, haystack) {
 
 
 
- 

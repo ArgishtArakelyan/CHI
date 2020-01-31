@@ -416,6 +416,7 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
 
     .overlay {
         background: rgba(109, 125, 149, 0.7);
@@ -509,6 +510,7 @@ a {
             h1 {
                 font-size: 36px;
                 font-weight: normal;
+                text-align: center;
                 line-height: 56px;
                 color: #08428C;
             }
@@ -918,7 +920,7 @@ text {
     a{
         font-weight: 500;
         font-size: 20px;
-        color: #08428C;
+        color: #000;
         margin-bottom: 8px;
         display: block;
     }
@@ -1297,7 +1299,7 @@ h1 {
     font-size: 24px;
     line-height: 45px;
     padding-left: 40px;
-    margin-bottom: 64px;
+    margin-bottom: 150px;
 
     span {
         font-weight: 600;
@@ -1438,7 +1440,7 @@ h1 {
 
 #chartdiv {
   width: 100%;
-  height: 660px
+  height: 700px
 }
 
 g[aria-labelledby="id-66-title"]{
